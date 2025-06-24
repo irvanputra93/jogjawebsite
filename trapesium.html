@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hitung Luas Trapesium</title>
+    <link rel="stylesheet" href="styletrapesium.css">
+</head>
+<body>
+    <h2>Form Hitung Luas Trapesium</h2>
+
+    <form onsubmit="return false;">
+        <label for="a">Sisi Atas (a):</label><br>
+        <input type="number" id="a" required><br>
+
+        <label for="b">Sisi Bawah (b):</label><br>
+        <input type="number" id="b" required><br>
+
+        <label for="t">Tinggi (t):</label><br>
+        <input type="number" id="t" required><br><br>
+
+        <button onclick="hitung()">Hitung Luas</button>
+    </form>
+
+    <p>Luas Trapesium: <span id="hasil">0</span></p>
+
+    <script>
+        function hitung() {
+            let a = parseFloat(document.getElementById('a').value);
+            let b = parseFloat(document.getElementById('b').value);
+            let t = parseFloat(document.getElementById('t').value);
+            let luas = 0.5 * (a + b) * t;
+            document.getElementById('hasil').innerText = luas.toFixed(2);
+        }
+    </script>
+</body>
+</html>
